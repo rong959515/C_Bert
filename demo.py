@@ -23,7 +23,7 @@ class BERT(nn.Module):
 
         options_name = "bert-base-chinese"
         # BertForSequenceClassification.config_class = 14
-        self.encoder = BertForSequenceClassification.from_pretrained(options_name, num_labels=14)
+        self.encoder = BertForSequenceClassification.from_pretrained(options_name, num_labels=15)
 
     def forward(self, text, label):
         loss, text_fea = self.encoder(text, labels=label)[:2]
